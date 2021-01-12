@@ -1,0 +1,33 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"Target":
+	{
+		"EntitySet" : "MyNotificationHeaders",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service",
+		"ReadLink" : "{@odata.readLink}"
+	},
+	"Properties":
+	{
+		"NotificationDescription" : "#Control:NotificationDescription/#Value",
+		"NotificationType" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateTypeLstPkrValue.js",
+		"Priority" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePrioritySegValue.js",
+		"HeaderFunctionLocation" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateFunctionalLocationLstPkrValue.js",
+		"HeaderEquipment" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateEquipmentLstPkrValue.js",
+        "BreakdownIndicator" : "/SAPAssetManager/Rules/Notifications/BreakdownSwitchValue.js",
+        "MalfunctionStartDate": "/SAPAssetManager/Rules/Notifications/MalfunctionStartDate.js",
+        "MalfunctionStartTime": "/SAPAssetManager/Rules/Notifications/MalfunctionStartTime.js",
+        "MalfunctionEndDate": "/SAPAssetManager/Rules/Notifications/MalfunctionEndDate.js",
+        "MalfunctionEndTime": "/SAPAssetManager/Rules/Notifications/MalfunctionEndTime.js"
+	},
+    "Headers":
+	{
+        "OfflineOData.TransactionID": "#Property:NotificationNumber"
+    },
+	"UpdateLinks": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationLinks.js",
+	"DeleteLinks": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationLinksDelete.js",
+    "OnSuccess": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationUpdateSuccess.js",
+	"OnFailure": "/SAPAssetManager/Actions/OData/ODataUpdateFailureMessage.action",
+	"ValidationRule": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateValidation.js",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText" : "  "
+}

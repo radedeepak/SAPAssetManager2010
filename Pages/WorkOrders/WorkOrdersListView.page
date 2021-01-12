@@ -1,0 +1,73 @@
+{
+	"Caption": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewCaption.js",
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewOnReturning.js",
+
+	"ActionBar":
+	{
+		"Items":
+		[
+		{
+			"Position": "right",
+			"Icon": "res://sync",
+			"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
+		},
+		{
+			"Position": "right",
+			"Icon": "res://add",
+			"Text": "$(L,add)",
+			"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderCreate.js",
+			"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateNav.js"
+		},
+		{
+			"Position": "right",
+			"Icon": "$(PLT,'','res://filter')",
+			"Text": "$(L,filter)",
+            "OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderFilter.action"
+		}]
+	},
+	"Controls":
+	[{
+		"Sections":
+		[{
+			"Search":
+			{
+				"Enabled" : "/SAPAssetManager/Rules/WorkOrders/WorkOrdersSearchEnabled.js",
+				"Delay": 500,
+				"MinimumCharacterThreshold": 3,
+				"Placeholder": "$(L,search)",
+				"BarcodeScanner": true
+			},
+			"Header": {
+		 		"UseTopPadding": false
+			},
+			"EmptySection": {
+				"Caption": "$(L,no_workorders_available)"
+			},
+			"ObjectCell": {
+				"PreserveIconStackSpacing": true,
+				"Icons": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewIconImages.js",
+				"Title": "{OrderDescription}",
+				"Subhead": "{OrderId}",
+				"Footnote": "/SAPAssetManager/Rules/DateTime/DueDate.js",
+				"StatusText": "#Property:WOPriority/#Property:PriorityDescription",
+				"SubstatusText": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewFormat.js",
+				"AccessoryType": "disclosureIndicator",
+				"OnPress" : "/SAPAssetManager/Rules/WorkOrders/WorkOrderDetailsNav.js"
+			},
+			"Target":
+			{
+				"EntitySet" : "MyWorkOrderHeaders",
+				"Service" : "/SAPAssetManager/Services/AssetManager.service",
+                "QueryOptions": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewQueryOption.js"
+			},
+			"_Type" : "Section.Type.ObjectTable",
+			"_Name" : "WorkOrdersListSection"
+		}],
+		"_Type" : "Control.Type.SectionedTable",
+		"_Name" : "SectionedTable"
+	}],
+	"_Type": "Page",
+	"_Name": "WorkOrdersListViewPage",
+	"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js"
+}

@@ -1,0 +1,177 @@
+{
+	"Caption": "$(L, bom)",
+	"Controls": [
+		{
+			"_Type": "Control.Type.Extension",
+			"Module": "extension-HierarchyFramework",
+			"Control": "HierarchyExtension",
+			"Class": "HierarchyExtension",
+			"_Name": "HierarchyExtensionControl",
+			"DataSubscriptions": ["MyEquipments"],
+			"ExtensionProperties": {
+				"Root":{},
+				"BusinessObjects": [
+					{
+						"Target": { 
+							"EntitySet" : "MyEquipments",
+							"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+							"QueryOptions":"",
+							"Properties": [],
+							"KeyProperties": []
+						},
+						"Properties":{
+							"ID":"{@odata.readLink}",
+							"Title":"{EquipDesc}",
+							"Subhead":"{EquipId}",
+							"Footnote": "$(L, equipment)",
+							"ChildCount": "/SAPAssetManager/Rules/Equipment/BOM/EquipmentBOMCountOnline.js",
+							"Parent": [],
+							"Children": [
+								{ 
+									"Target": { 
+										"EntitySet" : "EquipmentBOMs",
+										"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+										"Properties": [],
+										"KeyProperties": [],
+										"QueryOptions":"$expand=BOMHeader_Nav&$filter=EquipId%20eq%20'{EquipId}'"
+									}
+								}
+							]
+						},
+						"OnPress": {
+							"Action": "/SAPAssetManager/Rules/Equipment/HierarcyEquipmentDetailsNav.js"
+						}
+					},
+					{
+						"Target": { 
+							"EntitySet" : "EquipmentBOMs",
+							"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+							"QueryOptions":"",
+							"Properties": [],
+							"KeyProperties": []
+						},
+						"Properties":{
+							"ID":"{@odata.readLink}",
+							"Title":"/SAPAssetManager/Rules/Material/BOM/BOMHeaderDescription.js",
+							"Subhead":"{BOMId}",
+							"Footnote": "/SAPAssetManager/Rules/Material/BOM/BOMHeaderQtyAndUom.js",
+							"ChildCount": "/SAPAssetManager/Rules/Material/BOM/BOMCountOnline.js",
+							"Parent": [],
+							"Children": [
+								{ 
+									"Target": { 
+										"EntitySet" : "BOMItems",
+										"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+										"Properties": [],
+										"KeyProperties": [],
+										"QueryOptions":"$filter=BOMId%20eq%20'{BOMId}'%20and%20BOMCategory%20eq%20'{BOMCategory}'"
+									}
+								}
+							]
+						}
+          			},
+					{
+						"Target": { 
+							"EntitySet" : "MyFunctionalLocations",
+							"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+							"QueryOptions":"",
+							"Properties": [],
+							"KeyProperties": []
+						},
+						"Properties":{
+							"ID":"{@odata.readLink}",
+							"Title":"{FuncLocDesc}",
+							"Subhead":"{FuncLocId}",
+							"Footnote": "$(L, functional_location)",
+							"ChildCount": "/SAPAssetManager/Rules/FunctionalLocation/BOM/FunctionalLocationBOMCountOnline.js",
+							"Parent": [],
+							"Children": [
+								{ 
+									"Target": { 
+										"EntitySet" : "FunctionalLocationBOMs",
+										"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+										"Properties": [],
+										"KeyProperties": [],
+										"QueryOptions":"$expand=BOMHeader_Nav&$filter=FuncLocIdIntern%20eq%20'{FuncLocIdIntern}'"
+									}
+								}
+							]
+						},
+						"OnPress": {
+							"Action": "/SAPAssetManager/Rules/FunctionalLocation/HierarcyFunctionalLocationDetailsNav.js"
+						}
+					  },
+					  {
+						"Target": { 
+							"EntitySet" : "FunctionalLocationBOMs",
+							"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+							"QueryOptions":"",
+							"Properties": [],
+							"KeyProperties": []
+						},
+						"Properties":{
+							"ID":"{@odata.readLink}",
+							"Title":"/SAPAssetManager/Rules/Material/BOM/BOMHeaderDescription.js",
+							"Subhead":"{BOMId}",
+							"Footnote": "/SAPAssetManager/Rules/Material/BOM/BOMHeaderQtyAndUom.js",
+							"ChildCount": "/SAPAssetManager/Rules/Material/BOM/BOMCountOnline.js",
+							"Parent": [],
+							"Children": [
+								{ 
+									"Target": { 
+										"EntitySet" : "BOMItems",
+										"Service" : "/SAPAssetManager/Services/AssetManager.service",
+										"Properties": [],
+										"KeyProperties": [],
+										"QueryOptions":"$filter=BOMId%20eq%20'{BOMId}'%20and%20BOMCategory%20eq%20'{BOMCategory}'"
+									}
+								}
+							]
+						}
+          			},
+					{
+						"Target": { 
+							"EntitySet" : "BOMItems",
+							"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+							"QueryOptions":"",
+							"Properties": [],
+							"KeyProperties": []
+						},
+						"Properties":{
+							"ID":"{@odata.readLink}",
+							"Title":"{MaterialDesc} {ItemText2}",
+							"Subhead":"/SAPAssetManager/Rules/Material/BOM/BOMTypeAndMaterial.js",
+							"Footnote": "{Quantity} {UoM}",
+							"ChildCount": "/SAPAssetManager/Rules/Material/BOM/BOMChildrenCountOnline.js",
+							"Parent": [
+							],
+							"Children": [
+								{ 
+									"Target": { 
+										"EntitySet" : "BOMItems",
+										"Service" : "/SAPAssetManager/Services/OnlineAssetManager.service",
+										"Properties": [],
+										"KeyProperties": [],
+										"QueryOptions":"$filter=BOMId%20eq%20'{ChildBoMId}'%20and%20BOMCategory%20eq%20'{ChildBoMCategory}'"
+									}
+								}
+							]
+						},
+						"OnPress": {
+							"Action": "/SAPAssetManager/Actions/Parts/BOM/BOMDetailsNav.action",
+							"Target": {
+								"EntitySet": "BOMItems",
+								"Service": "/SAPAssetManager/Services/OnlineAssetManager.service",
+								"QueryOptions": "$filter=BOMCategory%20eq%20'{BOMCategory}'%20and%20BOMId%20eq%20'{BOMId}'%20and%20ItemNode%20eq%20'{ItemNode}'",
+								"Properties": [],
+								"KeyProperties": []
+							}
+						}
+          			}               
+				]
+			}
+		}
+	],
+	"_Name": "BOMHierarchyControl",
+	"_Type": "Page"
+}

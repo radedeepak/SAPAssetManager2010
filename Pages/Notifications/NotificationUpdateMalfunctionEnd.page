@@ -1,0 +1,113 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "right",
+				"SystemItem": "/SAPAssetManager/Rules/Common/ChangeSet/ChangeSetCreateUpdateDoneIcon.js",
+				"Text": "$(L,done)",
+				"OnPress": "/SAPAssetManager/Actions/Notifications/CreateUpdate/NotificationUpdateMalfunctionEnd.action"
+			},
+			{
+				"Position": "left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Rules/Notifications/CheckForChangesBeforeClose.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+                        {
+                            "Caption": "$(L,notification)",
+							"Value": "{NotificationNumber}",
+							"IsAutoResizing": true,
+							"_Name": "NotificationNumber",
+                            "_Type": "Control.Type.FormCell.SimpleProperty",
+                            "IsEditable": false
+                        },
+						{
+                            "Caption": "$(L,notification_description)",
+							"PlaceHolder": "$(L,notification_description)",
+							"Value": "{NotificationDescription}",
+							"IsAutoResizing": true,
+							"_Name": "NotificationDescription",
+                            "_Type": "Control.Type.FormCell.SimpleProperty",
+                            "IsEditable": false
+                        }
+                    ]
+				},
+				{
+					"Controls": [
+                        {
+							"Caption": "$(L,breakdown)",
+							"Value": "{BreakdownIndicator}",
+							"_Name": "BreakdownSwitch",
+                            "_Type": "Control.Type.FormCell.Switch",
+                            "IsVisible": true
+                        },
+                        {
+							"Caption": "$(L,start_date)",
+                            "_Name": "BreakdownStartSwitch",
+                            "Value": false,
+                            "_Type": "Control.Type.FormCell.Switch",
+                            "OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateBreakdownStartOnChange.js",
+                            "IsVisible": true
+                        },
+                        {
+                            "Caption": "$(L, malfunction_start_date)",
+                            "DateTimeEntryMode" : "date",
+                            "Mode" : "Date",
+                            "_Type": "Control.Type.FormCell.DatePicker",
+                            "_Name": "MalfunctionStartDatePicker",
+                            "IsEditable": false,
+                            "IsVisible": true
+                        },
+                        {
+                            "Caption": "$(L, malfunction_start_time)",
+                            "DateTimeEntryMode" : "time",
+                            "Mode" : "Time",
+                            "_Type": "Control.Type.FormCell.DatePicker",
+                            "_Name": "MalfunctionStartTimePicker",
+                            "IsEditable": false,
+                            "IsVisible": true
+                        },
+                        {
+							"Caption": "$(L,end_date)",
+                            "_Name": "BreakdownEndSwitch",
+                            "Value": false,
+                            "_Type": "Control.Type.FormCell.Switch",
+                            "OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateBreakdownEndOnChange.js",
+                            "IsVisible": true
+                        },
+                        {
+                            "Caption": "$(L, malfunction_end_date)",
+                            "DateTimeEntryMode" : "date",
+                            "Mode" : "Date",
+                            "_Type": "Control.Type.FormCell.DatePicker",
+                            "_Name": "MalfunctionEndDatePicker",
+                            "IsEditable": false,
+                            "IsVisible": true
+                        },
+                        {
+                            "Caption": "$(L, malfunction_end_time)",
+                            "DateTimeEntryMode" : "time",
+                            "Mode" : "Time",
+                            "_Type": "Control.Type.FormCell.DatePicker",
+                            "_Name": "MalfunctionEndTimePicker",
+                            "IsEditable": false,
+                            "IsVisible": true
+                        }
+					]
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+    "_Name": "NotificationUpdateMalfunctionEnd",
+    "Caption": "$(L, edit_notification)",
+    "OnLoaded": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js"
+}

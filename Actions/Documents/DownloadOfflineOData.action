@@ -1,0 +1,615 @@
+{
+    "Service": "/SAPAssetManager/Services/AssetManager.service",
+    "StoreName": "SAMStore",
+    "DefiningRequests": [
+        {
+            "Name": "AppParameters",
+            "Query": "AppParameters"
+        },
+        {
+            "Name": "MyWorkOrderHeaders",
+            "Query": "MyWorkOrderHeaders"
+        },
+        {
+            "Name": "PMMobileStatuses",
+            "Query": "PMMobileStatuses"
+        },
+        {
+            "Name": "MyWorkOrderHeaderLongTexts",
+            "Query": "MyWorkOrderHeaderLongTexts"
+        },
+        {
+            "Name": "MyWorkOrderOperations",
+            "Query": "MyWorkOrderOperations"
+        },
+        {
+            "Name": "MyWorkOrderOperationLongTexts",
+            "Query": "MyWorkOrderOperationLongTexts"
+        },
+        {
+            "Name": "MyWorkOrderSubOperations",
+            "Query": "MyWorkOrderSubOperations"
+        },
+        {
+            "Name": "MyWorkOrderSubOpLongTexts",
+            "Query": "MyWorkOrderSubOpLongTexts"
+        },
+        {
+            "Name": "MyWorkOrderComponents",
+            "Query": "MyWorkOrderComponents"
+        },
+        {
+            "Name": "MyWorkOrderComponentLongTexts",
+            "Query": "MyWorkOrderComponentLongTexts"
+        },
+        {
+            "Name": "MyWorkOrderTools",
+            "Query": "MyWorkOrderTools"
+        },
+        {
+            "Name": "MyWorkOrderObjectLists",
+            "Query": "MyWorkOrderObjectLists"
+        },
+        {
+            "Name": "Priorities",
+            "Query": "Priorities"
+        },
+        {
+            "Name": "MyEquipments",
+            "Query": "MyEquipments"
+        },
+        {
+            "Name": "MyEquipDocuments",
+            "Query": "MyEquipDocuments"
+        },
+        {
+            "Name": "MyFunctionalLocations",
+            "Query": "MyFunctionalLocations"
+        },
+        {
+            "Name": "MyFuncLocDocuments",
+            "Query": "MyFuncLocDocuments"
+        },
+        {
+            "Name": "MyFuncLocGeometries",
+            "Query": "MyFuncLocGeometries"
+        },
+        {
+            "Name": "MyFuncLocPartners",
+            "Query": "MyFuncLocPartners"
+        },
+        {
+            "Name": "FuncLocCategories",
+            "Query": "FuncLocCategories"
+        },
+        {
+            "Name": "MyFuncLocSystemStatuses",
+            "Query": "MyFuncLocSystemStatuses"
+        },
+        {
+            "Name": "MyFuncLocUserStatuses",
+            "Query": "MyFuncLocUserStatuses"
+        },
+        {
+            "Name": "MyFuncLocObjectStatuses",
+            "Query": "MyFuncLocObjectStatuses"
+        },
+        {
+            "Name": "UserStatuses",
+            "Query": "UserStatuses"
+        },
+        {
+            "Name": "SystemStatuses",
+            "Query": "SystemStatuses"
+        },
+        {
+            "Name": "MyEquipObjectStatuses",
+            "Query": "MyEquipObjectStatuses"
+        },
+        {
+            "Name": "NotificationTypes",
+            "Query": "NotificationTypes"
+        },
+        {
+            "Name": "OrderTypes",
+            "Query": "OrderTypes"
+        },
+        {
+            "Name": "WorkOrderHistories",
+            "Query": "WorkOrderHistories"
+        },
+        {
+            "Name": "WorkOrderHistoryTexts",
+            "Query": "WorkOrderHistoryTexts"
+        },
+        {
+            "Name": "MeasurementDocuments",
+            "Query": "MeasurementDocuments"
+        },
+        {
+            "Name": "MeasuringPoints",
+            "Query": "MeasuringPoints"
+        },
+        {
+            "Name": "MeasuringPointTexts",
+            "Query": "MeasuringPointTexts"
+        },
+        {
+            "Name": "Geometries",
+            "Query": "Geometries"
+        },
+        {
+            "Name": "MyWorkOrderGeometries",
+            "Query": "MyWorkOrderGeometries"
+        },
+        {
+            "Name": "BusinessAreas",
+            "Query": "BusinessAreas"
+        },
+        {
+            "Name": "WorkCenters",
+            "Query": "WorkCenters"
+        },
+        {
+            "Name": "ControlKeys",
+            "Query": "ControlKeys"
+        },
+        {
+            "Name": "Plants",
+            "Query": "Plants"
+        },
+        {
+            "Name": "NotifPartnerDetProcs",
+            "Query": "NotifPartnerDetProcs"
+        },
+        {
+            "Name": "MyNotificationHeaders",
+            "Query": "MyNotificationHeaders"
+        },
+        {
+            "Name": "MyNotificationItems",
+            "Query": "MyNotificationItems"
+        },
+        {
+            "Name": "MyNotificationTasks",
+            "Query": "MyNotificationTasks"
+        },
+        {
+            "Name": "MyNotificationActivities",
+            "Query": "MyNotificationActivities"
+        },
+        {
+            "Name": "MyNotificationPartners",
+            "Query": "MyNotificationPartners"
+        },
+        {
+            "Name": "MyNotificationItemCauses",
+            "Query": "MyNotificationItemCauses"
+        },
+        {
+            "Name": "MyNotificationItemTasks",
+            "Query": "MyNotificationItemTasks"
+        },
+        {
+            "Name": "MyNotificationItemActivities",
+            "Query": "MyNotificationItemActivities"
+        },
+        {
+            "Name": "MyNotifHeaderLongTexts",
+            "Query": "MyNotifHeaderLongTexts"
+        },
+        {
+            "Name": "MyNotifItemLongTexts",
+            "Query": "MyNotifItemLongTexts"
+        },
+        {
+            "Name": "MyNotifTaskLongTexts",
+            "Query": "MyNotifTaskLongTexts"
+        },
+        {
+            "Name": "ActivityTypes",
+            "Query": "ActivityTypes"
+        },
+        {
+            "Name": "AttendanceTypes",
+            "Query": "AttendanceTypes"
+        },
+        {
+            "Name": "MyNotifActivityLongTexts",
+            "Query": "MyNotifActivityLongTexts"
+        },
+        {
+            "Name": "MyNotifItemCauseLongTexts",
+            "Query": "MyNotifItemCauseLongTexts"
+        },
+        {
+            "Name": "MyNotifItemTaskLongTexts",
+            "Query": "MyNotifItemTaskLongTexts"
+        },
+        {
+            "Name": "MyNotifItemActivityLongTexts",
+            "Query": "MyNotifItemActivityLongTexts"
+        },
+        {
+            "Name": "CatsTimesheets",
+            "Query": "CatsTimesheets"
+        },
+        {
+            "Name": "PMCatalogProfiles",
+            "Query": "PMCatalogProfiles"
+        },
+        {
+            "Name": "PMCatalogCodes",
+            "Query": "PMCatalogCodes"
+        },
+        {
+            "Name": "CatsTimesheetOverviewRows",
+            "Query": "CatsTimesheetOverviewRows"
+        },
+        {
+            "Name": "COActivityTypes",
+            "Query": "COActivityTypes"
+        },
+        {
+            "Name": "GISMapParameters",
+            "Query": "GISMapParameters"
+        },
+        {
+            "Name": "Documents",
+            "Query": "Documents"
+        },
+        {
+            "Name": "CatsTimesheetTexts",
+            "Query": "CatsTimesheetTexts"
+        },
+        {
+            "Name": "Confirmations",
+            "Query": "Confirmations"
+        },
+        {
+            "Name": "ConfirmationOverviewRows",
+            "Query": "ConfirmationOverviewRows"
+        },
+        {
+            "Name": "ConfirmationLongTexts",
+            "Query": "ConfirmationLongTexts"
+        },
+        {
+            "Name": "MaterialDocItems",
+            "Query": "MaterialDocItems"
+        },
+        {
+            "Name": "MaterialSLocs",
+            "Query": "MaterialSLocs"
+        },
+        {
+            "Name": "MaterialUOMs",
+            "Query": "MaterialUOMs"
+        },
+        {
+            "Name": "Materials",
+            "Query": "Materials"
+        },
+        {
+            "Name": "MobileStatusMappings",
+            "Query": "MobileStatusMappings"
+        },
+        {
+            "Name": "MyEquipWarrantyLongTexts",
+            "Query": "MyEquipWarrantyLongTexts"
+        },
+        {
+            "Name": "MyEquipGeometries",
+            "Query": "MyEquipGeometries"
+        },
+        {
+            "Name": "MyEquipSystemStatuses",
+            "Query": "MyEquipSystemStatuses"
+        },
+        {
+            "Name": "MyEquipUserStatuses",
+            "Query": "MyEquipUserStatuses"
+        },
+        {
+            "Name": "EquipObjectTypes",
+            "Query": "EquipObjectTypes"
+        },
+        {
+            "Name": "MyEquipPartners",
+            "Query": "MyEquipPartners"
+        },
+        {
+            "Name":"MyEquipSerialNumbers",
+            "Query":"MyEquipSerialNumbers"
+        },
+        {
+            "Name":"LAMObjectData",
+            "Query":"LAMObjectData"
+        },
+        {
+            "Name":"LAMOffsetTypes",
+            "Query":"LAMOffsetTypes"
+        },
+        {
+            "Name":"LAMCharacteristicValues",
+            "Query":"LAMCharacteristicValues"
+        },
+        {
+            "Name": "NotificationHistories",
+            "Query": "NotificationHistories"
+        },
+        {
+            "Name": "NotificationHistoryTexts",
+            "Query": "NotificationHistoryTexts"
+        },
+        {
+            "Name": "MyNotifDocuments",
+            "Query": "MyNotifDocuments"
+        },
+        {
+            "Name": "MyNotifGeometries",
+            "Query": "MyNotifGeometries"
+        },
+        {
+            "Name": "UserPreferences",
+            "Query": "UserPreferences"
+        },
+        {
+            "Name": "UserGeneralInfos",
+            "Query": "UserGeneralInfos"
+        },
+        {
+            "Name": "UserSystemInfos",
+            "Query": "UserSystemInfos"
+        },
+        {
+            "Name": "MaterialPlants",
+            "Query": "MaterialPlants"
+        },
+        {
+            "Name": "MaterialDocuments",
+            "Query": "MaterialDocuments"
+        },
+        {
+            "Name": "MyWorkOrderComponentMatDocs",
+            "Query": "MyWorkOrderComponentMatDocs"
+        },
+        {
+            "Name": "MatDocItemSerialNums",
+            "Query": "MatDocItemSerialNums"
+        },
+        {
+            "Name": "MyWorkOrderDocuments",
+            "Query": "MyWorkOrderDocuments"
+        },
+        {
+            "Name": "MyWorkOrderGeometries",
+            "Query": "MyWorkOrderGeometries"
+        },
+        {
+            "Name": "MyWorkOrderPartners",
+            "Query": "MyWorkOrderPartners"
+        },
+        {
+            "Name": "MyEquipWarranties",
+            "Query": "MyEquipWarranties"
+        },
+        {
+            "Name": "MeasurementDocumentLongTexts",
+            "Query": "MeasurementDocumentLongTexts"
+        },
+        {
+            "Name": "AcctIndicators",
+            "Query": "AcctIndicators"
+        },
+        {
+            "Name": "PlannerGroups",
+            "Query": "PlannerGroups"
+        },
+        {
+            "Name": "VarianceReasons",
+            "Query": "VarianceReasons"
+        },
+        {
+            "Name": "MarkedJobs",
+            "Query": "MarkedJobs"
+        },
+        {
+            "Name": "Locations",
+            "Query": "Locations"
+        },
+        {
+            "Name": "Employees",
+            "Query": "Employees"
+        },
+        {
+            "Name": "Characteristics",
+            "Query": "Characteristics"
+        },
+        {
+            "Name": "ClassCharacteristics",
+            "Query": "ClassCharacteristics"
+        },
+        {
+            "Name": "ClassCharacteristicValues",
+            "Query": "ClassCharacteristicValues"
+        },
+        {
+            "Name": "ClassDefinitions",
+            "Query": "ClassDefinitions"
+        },
+        {
+            "Name": "ClassTypes",
+            "Query": "ClassTypes"
+        },
+        {
+            "Name": "MyEquipClasses",
+            "Query": "MyEquipClasses"
+        },
+        {
+            "Name": "MyEquipClassCharValues",
+            "Query": "MyEquipClassCharValues"
+        },
+        {
+            "Name": "MyFuncLocClasses",
+            "Query": "MyFuncLocClasses"
+        },
+        {
+            "Name": "MyFuncLocClassCharValues",
+            "Query": "MyFuncLocClassCharValues"
+        },
+        {
+            "Name": "Addresses",
+            "Query": "Addresses"
+        },
+        {
+            "Name": "AddressesAtWork",
+            "Query": "AddressesAtWork"
+        },
+        {
+            "Name": "AddressesAtWorkComm",
+            "Query": "AddressesAtWorkComm"
+        },
+        {
+            "Name": "AddressCommunications",
+            "Query": "AddressCommunications"
+        },
+        {
+            "Name": "PartnerFunctions",
+            "Query": "PartnerFunctions"
+        },
+        {
+            "Name": "EmployeeAddresses",
+            "Query": "EmployeeAddresses"
+        },
+        {
+            "Name": "EmployeeCommunications",
+            "Query": "EmployeeCommunications"
+        },
+        {
+            "Name": "Countries",
+            "Query": "Countries"
+        },
+        {
+            "Name": "Regions",
+            "Query": "Regions"
+        },
+        {
+            "Name": "Customers",
+            "Query": "Customers"
+        },
+        {
+            "Name": "Vendors",
+            "Query": "Vendors"
+        },
+        {
+            "Name": "SAPUsers",
+            "Query": "SAPUsers"
+        },
+        {
+            "Name": "PRTControlKeys",
+            "Query": "PRTControlKeys"
+        },
+        {
+            "Name": "UsageUoMs",
+            "Query": "UsageUoMs"
+        },
+        {
+            "Name": "EquipmentCategories",
+            "Query": "EquipmentCategories"
+        },
+        {
+            "Name": "AssetCentralObjectLinks",
+            "Query": "AssetCentralObjectLinks"
+        },
+        {
+            "Name": "ObjectFormCategories",
+            "Query": "ObjectFormCategories"
+        },
+        {
+            "Name": "ObjectFormTemplates",
+            "Query": "ObjectFormTemplates"
+        },
+        {
+            "Name": "FormTemplateHeaders",
+            "Query": "FormTemplateHeaders"
+        },
+        {
+            "Name": "FormTemplateQuestions",
+            "Query": "FormTemplateQuestions"
+        },
+        {
+            "Name": "Forms",
+            "Query": "Forms"
+        },
+        {
+            "Name": "FormGroups",
+            "Query": "FormGroups"
+        },
+        {
+            "Name": "ChecklistAssessmentQuestions",
+            "Query": "ChecklistAssessmentQuestions"
+        },
+        {
+            "Name": "FormQuestions",
+            "Query": "FormQuestions"
+        },
+        {
+            "Name": "AnswerHeaders",
+            "Query": "AnswerHeaders"
+        },
+        {
+            "Name": "AnswerOptions",
+            "Query": "AnswerOptions"
+        },
+        {
+            "Name": "FormTemplateGroups",
+            "Query": "FormTemplateGroups"
+        },
+        {
+            "Name": "ChecklistBusObjects",
+            "Query": "ChecklistBusObjects"
+        },
+        {
+            "Name": "UserTimeEntries",
+            "Query": "UserTimeEntries"
+        },
+        {
+            "Name": "BOMHeaders",
+            "Query": "BOMHeaders"
+        },
+        {
+            "Name": "BOMItems",
+            "Query": "BOMItems"
+        },
+        {
+            "Name": "EquipmentBOMs",
+            "Query": "EquipmentBOMs"
+        },
+        {
+            "Name": "FunctionalLocationBOMs",
+            "Query": "FunctionalLocationBOMs"
+        },
+        {
+            "Name": "ItemCategories",
+            "Query": "ItemCategories"
+        },
+        {
+            "Name": "StorageLocations",
+            "Query": "StorageLocations"
+        },
+         {   "Name": "LinearReferencePatternHeaders",
+            "Query": "LinearReferencePatternHeaders"
+        },
+        {   "Name": "LinearReferencePatternItems",
+            "Query": "LinearReferencePatternItems"
+        }
+    ],
+    "StoreEncryptionKey": "SAPTest123",
+    "_Type": "Action.Type.OfflineOData.Download",
+    "OnSuccess": "/SAPAssetManager/Rules/Sync/CheckForSyncErrorsAfterDownloadSuccess.js",
+    "OnFailure": "/SAPAssetManager/Rules/Sync/CheckForSyncErrorsAfterDownloadFailure.js",
+    "ActionResult": {
+       "_Name": "result"
+    }
+}

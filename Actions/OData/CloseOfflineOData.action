@@ -1,0 +1,6 @@
+{
+  "_Type": "Action.Type.OfflineOData.Close",
+  "Service": "/SAPAssetManager/Services/AssetManager.service",
+  "OnFailure": "/SAPAssetManager/Actions/OData/CloseOfflineODataFailure.action",
+  "Force": true
+}

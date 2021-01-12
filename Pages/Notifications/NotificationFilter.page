@@ -1,0 +1,120 @@
+{
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+            },
+            {
+                "Position": "right",
+                "SystemItem": "/SAPAssetManager/Rules/Filter/FilterSystemItem.js",
+                "Text": "/SAPAssetManager/Rules/Filter/FilterText.js",
+                "OnPress": "/SAPAssetManager/Rules/Filter/FilterDone.js"
+            }
+        ]
+    },
+    "Caption":"$(L,filter)",
+    "Result":
+    [
+        "#Page:NotificationFilterPage/#Control:SortFilter/#Value",
+        "#Page:NotificationFilterPage/#Control:MobileStatusFilter/#Value",
+        "#Page:NotificationFilterPage/#Control:PriorityFilter/#Value",
+        "#Page:NotificationFilterPage/#Control:TypeFilter/#FilterValue"
+    ],
+    "Controls":
+    [{
+        "Sections":
+        [{
+            "Controls":
+            [{
+                "AllowEmptySelection":false,
+                "Caption":"$(L,sort_by)",
+                "SortByItems":
+                [{
+                    "ReturnValue":"Priority",
+                    "DisplayValue":"$(L,priority)"
+                },
+                {
+                    "ReturnValue":"NotificationDescription",
+                    "DisplayValue":"$(L,description)"
+                },
+                {
+                    "ReturnValue":"RequiredEndDate",
+                    "DisplayValue":"$(L,due_date)"
+                },
+                {
+                    "ReturnValue":"NotificationNumber",
+                    "DisplayValue":"$(L,notification_id)"
+                }],
+                "_Name":"SortFilter",
+                "_Type":"Control.Type.FormCell.Sorter",
+                "IsEditable":true
+            }]
+        },
+        {
+            "Controls":
+            [{
+                "AllowMultipleSelection":true,
+                "AllowEmptySelection":true,
+                "Caption":"$(L,mobile_status)",
+                "FilterProperty":"/SAPAssetManager/Rules/Notifications/MobileStatus/NotificationsMobileStatusFilter.js",
+                "_Name":"MobileStatusFilter",
+                "_Type":"Control.Type.FormCell.Filter",
+                "IsEditable":true
+            },
+            {
+                "AllowMultipleSelection":true,
+                "AllowEmptySelection":true,
+                "Caption":"$(L,priority)",
+                "FilterProperty":"/SAPAssetManager/Rules/Priority/PriorityFilter.js",
+                "_Name":"PriorityFilter",
+                "_Type":"Control.Type.FormCell.Filter",
+                "IsEditable":true
+            },
+            {
+                "_Name": "TypeFilter",
+                "_Type": "Control.Type.FormCell.ListPicker",
+                "AllowMultipleSelection": true,
+                "IsPickerDismissedOnSelection": true,
+                "IsSearchCancelledAfterSelection": true,
+                "Search": {
+                    "Enabled": true,
+                    "Delay": 500,
+                    "MinimumCharacterThreshold": 3,
+                    "Placeholder": "$(L,search)",
+                    "BarcodeScanner": true
+                },
+                "Caption": "$(L,type)",
+                "Value": "{NotifType}",
+                "PickerItems": {
+                    "DisplayValue": "{{#Property:NotifType}} - {{#Property:Description}}",
+                    "ReturnValue": "{NotifType}",
+                    "Target": {
+                        "EntitySet": "NotificationTypes",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions":"$orderby=NotifType"
+                    }
+                },
+                "FilterProperty": "NotificationType"
+            }]
+        },
+        {
+            "Controls": [
+                {
+                    "Title": "$(L,reset_all)",
+                    "OnPress": "/SAPAssetManager/Rules/Filter/FilterReset.js",
+                    "_Type": "Control.Type.FormCell.Button",
+                    "ButtonType": "Normal",
+                    "_Name": "ResetButton",
+                    "TextAlignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js"
+                }
+            ]
+        }],
+        "_Name":"FormCellContainer",
+        "_Type":"Control.Type.FormCellContainer"
+    }],
+    "_Type":"Page",
+    "_Name":"NotificationFilterPage",
+    "OnLoaded": "/SAPAssetManager/Rules/Filter/FilterOnLoaded.js"
+}

@@ -1,0 +1,53 @@
+{
+	"Caption": "$(L,sync_errors)",
+	"Controls":
+	[{
+		"Sections":
+		[{
+			"Search":
+			{
+				"Enabled" : true,
+				"Delay": 500,
+				"MinimumCharacterThreshold": 3,
+				"Placeholder": "$(L,search)"
+			},
+			"Header": {
+                 "UseTopPadding": false
+    		},
+			"ObjectCell":
+			{
+        		"AccessoryType": "disclosureIndicator",
+				"Title":  "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveMessage.js",
+				"Subhead": "{HTTPStatusCode}",
+                "Description":"{RequestURL}",
+				"OnPress" : "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveDetailsNav.js",
+				"PreserveIconStackSpacing":false
+			},
+			"Target":
+			{
+				"EntitySet" : "ErrorArchive",
+				"Service" : "/SAPAssetManager/Services/AssetManager.service",
+				"QueryOptions":"$expand=CustomHeaders"
+			},
+			"_Type" : "Section.Type.ObjectTable"
+		},
+		{
+           "Header": {
+             "UseTopPadding": true
+           },
+          "Buttons": [
+            {
+              "Title" : "$(L,discard_all)",
+              "Style": "ResetRed",
+              "OnPress" : "/SAPAssetManager/Rules/Common/DiscardAllErrorsAction.js",
+			  "Visible": "/SAPAssetManager/Rules/Common/IsDiscardAllErrorsButtonVisible.js",
+              "TextAlignment" : "center"
+            }
+          ],
+          "_Type": "Section.Type.ButtonTable"
+        }],
+		"_Type" : "Control.Type.SectionedTable"
+	}],
+	"_Type": "Page",
+	"_Name": "ErrorArchivePage"
+}

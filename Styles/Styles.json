@@ -1,0 +1,9 @@
+{
+    "GridTableHeaderText": {
+    "font-color": "#6A6D70"
+    },
+    "GridTableRowText": {
+        "font-color": "#393E42",
+        "font-size": "14"
+    }
+}

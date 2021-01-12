@@ -1,0 +1,8 @@
+{
+    "Message": "$(L,download_progress)",
+    "CompletionMessage": "$(L,download_complete)",
+    "CompletionTimeout": 7,
+    "OnSuccess": "/SAPAssetManager/Actions/PushNotifications/PushNotificationsDownload.action",
+    "Animated": true,
+    "_Type": "Action.Type.ProgressBanner"
+}

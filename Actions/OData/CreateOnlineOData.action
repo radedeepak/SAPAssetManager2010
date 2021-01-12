@@ -1,0 +1,7 @@
+{
+	"Service": "/SAPAssetManager/Services/OnlineAssetManager.service",
+	"_Type": "Action.Type.ODataService.Create",
+	"ActionResult": {
+		"_Name": "result"
+	}
+}

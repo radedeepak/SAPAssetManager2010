@@ -1,0 +1,24 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target": {
+        "EntitySet": "UserTimeEntries",
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties": {
+        "RecordId": "#Property:ClockRecordId",
+        "UserGUID": "#Property:ClockUserGUID",
+        "OperationNo": "#Property:ClockOperationNo",
+        "SubOperationNo": "#Property:ClockSubOperationNo",
+        "OrderId": "#Property:ClockOrderId",
+        "PreferenceGroup": "#Property:ClockPreferenceGroup",
+        "PreferenceName": "#Property:ClockPreferenceName",
+        "PreferenceValue": "#Property:ClockPreferenceValue"
+    },
+    "Headers": {
+        "OfflineOData.RemoveAfterUpload": "false"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/ClockInClockOut/CreateDelete/WorkOrderClockInCreateLinks.js",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText" : "  "
+}

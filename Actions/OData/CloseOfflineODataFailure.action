@@ -1,0 +1,6 @@
+{
+    "Message": "$(L,closing_offline_store_failed)",
+    "Duration": 2,
+    "Animated": true,
+    "_Type": "Action.Type.BannerMessage"
+}

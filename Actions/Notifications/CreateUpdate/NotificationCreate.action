@@ -1,0 +1,39 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target":
+	{
+		"EntitySet" : "MyNotificationHeaders",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties":
+	{
+		"PlanningPlant": "/SAPAssetManager/Rules/Common/GetPlanningPlant.js",
+		"NotificationNumber" : "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js",
+		"NotificationDescription" : "#Control:NotificationDescription/#Value",
+		"NotificationType" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateTypeLstPkrValue.js",
+		"Priority" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePrioritySegValue.js",
+		"HeaderFunctionLocation" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateFunctionalLocationLstPkrValue.js",
+		"HeaderEquipment" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateEquipmentLstPkrValue.js",
+		"BreakdownIndicator" : "/SAPAssetManager/Rules/Notifications/BreakdownSwitchValue.js",
+		"MainWorkCenter" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateMainWorkCenter.js",
+		"MainWorkCenterPlant": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateMainWorkCenterPlant.js",
+        "ReportedBy": "/SAPAssetManager/Rules/Notifications/NotificationSAPUserName.js",
+        "MalfunctionStartDate": "/SAPAssetManager/Rules/Notifications/MalfunctionStartDate.js",
+        "MalfunctionStartTime": "/SAPAssetManager/Rules/Notifications/MalfunctionStartTime.js",
+        "MalfunctionEndDate": "/SAPAssetManager/Rules/Notifications/MalfunctionEndDate.js",
+        "MalfunctionEndTime": "/SAPAssetManager/Rules/Notifications/MalfunctionEndTime.js"
+	},
+	"CreateLinks": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationLinks.js",
+    "Headers":
+	{
+        "OfflineOData.RemoveAfterUpload": "true",
+        "OfflineOData.TransactionID": "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js"
+    },
+	"OnSuccess" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateSuccess.js",
+	"OnFailure": "/SAPAssetManager/Actions/OData/ODataCreateFailureMessage.action",
+	"ValidationRule": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateValidation.js",
+	"ActionResult":
+	{
+		"_Name": "CreateNotification"
+	}
+}

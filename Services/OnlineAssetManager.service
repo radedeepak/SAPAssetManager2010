@@ -1,0 +1,15 @@
+{
+	"AppId": "com.sap.sam2010.oauth",
+	"DestinationName": "DEST_SAM2010_PPROP",
+	"Headers": {
+		"SAP-PASSPORT": "/SAPAssetManager/Rules/Common/Passport/GetSAPPassportHeaderValue.js"
+	},
+	"OfflineEnabled": false,
+	"OnlineOptions": {
+		"ServiceOptions": {
+			"dataFormat": 1
+		}
+	},
+	"ServiceUrl": "/destinations/mobileservices_preview",
+	"SourceType": "Mobile"
+}

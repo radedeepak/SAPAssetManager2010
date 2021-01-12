@@ -1,0 +1,15 @@
+{
+    "Actions":
+	[
+        "/SAPAssetManager/Actions/Notifications/CreateUpdate/NotificationCreateUpdateNav.action",
+        "/SAPAssetManager/Actions/Notifications/NotificationPartnerCreateAssn1.action",
+        "/SAPAssetManager/Actions/Notifications/Item/NotificationItemCreateUpdateNav.action"
+    ],
+    "OnSuccess": "/SAPAssetManager/Actions/MobileStatus/MobileStatusNotificationSetReceived.action",
+    "OnFailure" : "/SAPAssetManager/Rules/Common/ChangeSet/ChangeSetOnFailure.js",
+    "Target":
+	{
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "_Type": "Action.Type.ODataService.ChangeSet"
+}

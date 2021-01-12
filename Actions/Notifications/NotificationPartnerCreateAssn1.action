@@ -1,0 +1,24 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target":
+	{
+        "EntitySet": "MyNotificationPartners",
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties":
+	{
+        "NotificationNumber": "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js",
+        "PartnerFunction": "/SAPAssetManager/Rules/Common/Partner/PartnerFunctionForPersonelNumber.js",
+        "PersonnelNum": "/SAPAssetManager/Rules/Common/Partner/PartnerPersonnelNumber.js",
+        "PartnerNum": "/SAPAssetManager/Rules/Common/Partner/PartnerNumberForNO.js"
+    },
+    "Headers":
+	{
+        "OfflineOData.RemoveAfterUpload": "true",
+        "OfflineOData.TransactionID": "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationPartnerLinksAssn1.js",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText" : " "
+}
